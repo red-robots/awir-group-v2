@@ -1,0 +1,193 @@
+.main-navigation {
+	// clear: both;
+	
+	width: 100%;
+	margin: 10px 0 0 0;
+	text-align: center;
+	background-color: rgba(0,0,0,.9);
+	@media screen and (min-width: $tabwidth) {
+		float: right;
+		text-align: left;
+	}
+
+	ul {
+		display: none;
+		list-style: none;
+		margin: 0;
+		padding-left: 0;
+
+		ul {
+			background-color: $color-purple;
+			display: block;
+			z-index: 99999;
+			background-color: #fff;
+			@media screen and (min-width: $tabwidth) {
+				float: left;
+				position: absolute;
+				top: 4em;
+				left: -999em;
+			}
+
+			ul {
+				left: -999em;
+				top: 0;
+
+			}
+
+			li {
+				line-height: 2;
+				margin: 0;
+				font-size: 13px;
+				text-align: center;
+				@media screen and (min-width: $tabwidth) {
+					font-size: 16px;
+					text-align: left;
+				}
+				&:hover > ul,
+				&.focus > ul {
+					left: 100%;
+				}
+			}
+
+			a {
+				width: 100%;
+				padding: 5px 10px;
+				@include transition(all ease .3s);
+				background-color: $color-purple;
+				color: #fff;
+				@media screen and (min-width: $tabwidth) {
+					width: 200px;
+
+				}
+			}
+
+			:hover > a,
+			.focus > a {
+				background-color: rgba($color-purple, 0.8);
+			}
+
+			a:hover,
+			a.focus {
+			}
+		}
+
+		li:hover > ul,
+		li.focus > ul {
+			left: auto;
+		}
+	}
+	li {
+		float: left;
+		position: relative;
+		flex-grow: 1;
+		text-transform: uppercase;
+		line-height: 4;
+		width: 100%;
+		font-size: 16px;
+		text-align: center;
+		@media screen and (min-width: $tabwidth) {
+			width: auto;
+			// margin: 0 10px 0 10px ;
+		}
+
+		&:hover > a,
+		&.focus > a {
+			background-color: $color-purple;
+		}
+	}
+	a {
+		display: block;
+		text-decoration: none;
+		color: #fff;
+		padding: 0 20px;
+	}
+
+	.current_page_item > a,
+	.current-menu-item > a,
+	.current_page_ancestor > a,
+	.current-menu-ancestor > a {
+		background-color: $color-purple;
+	}
+}
+
+/* Small menu. */
+.menu-toggle,
+.main-navigation.toggled ul {
+	display: block;
+	// background-color: $color-green;
+	ul.sub-menu {
+		background-color: rgba(255,255,255,.1);
+	}
+	
+}
+
+
+@media screen and (min-width: $tabwidth) {
+	.menu-toggle {
+		display: none;
+	}
+	.main-navigation ul {
+		display: flex;
+		justify-content: space-between;
+	}
+}
+button.menu-toggle {
+	border: 0px;
+	text-shadow: none;
+	background-color: rgba($color-purple,1);
+	color: #fff;
+	box-shadow: none;
+	width: auto;
+	display: inline-block;
+	margin: 10px auto;
+	border-radius: 0;
+	text-transform: uppercase;
+	font: {
+		
+		weight :300;
+		size: 20px;
+	}
+	
+	@media screen and (min-width: $tabwidth) {
+		display: none;
+	}
+}
+
+.comment-navigation,
+.posts-navigation,
+.post-navigation {
+
+	.site-main & {
+		margin: 0 0 1.5em;
+		overflow: hidden;
+	}
+
+	.nav-previous {
+		float: left;
+		width: 50%;
+	}
+
+	.nav-next {
+		float: right;
+		text-align: right;
+		width: 50%;
+	}
+}
+
+#mynav {
+	width: 100%;
+	position: relative;
+	z-index: 10000;
+	background-color: #fff;
+	@include transition(all ease .3s);
+}
+.skrollable-between, .skrollable-after {
+	.main-navigation {
+		@include transition(all ease .3s);
+	}
+}
+.skrollable-after {
+	.main-navigation {
+		margin: 30px 0 0 0;
+	}
+}
