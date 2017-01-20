@@ -12,43 +12,146 @@
  * @package ACStarter
  */
 
-get_header(); ?>
+get_header(); 
+
+
+
+// pull homepage
+$post = get_post(31); 
+setup_postdata( $post );
+ 
+	$image = get_field('local_chapters_image');
+	$corpimage = get_field('corp_image');
+
+
+
+	// vars
+	$url = $image['url'];
+	$title = $image['title'];
+	$alt = $image['alt'];
+	$caption = $image['caption'];
+
+	// thumbnail
+	$size = 'large';
+	$thumb = $image['sizes'][ $size ];
+	$width = $image['sizes'][ $size . '-width' ];
+	$height = $image['sizes'][ $size . '-height' ];
+
+	$titleText = get_field('title_text');
+	$button_text = get_field('button_text');
+	$video = get_field('video');
+	$additional_information = get_field('additional_information');
+
+
+ 
+wp_reset_postdata();
+
+
+
+	?>
 
 	<div id="primary" class="content-area-full">
 		<main id="main" class="site-main" role="main">
 
 	
 
-		
+		<section class="page-hero">
+			
+			<section class="home-hero">
+				<h2>Association of Women in Rheumatology</h2>
+			</section>
 
-		
-		<section id="slide-2" class="skr-slide">
-			<div class="bg-black"></div>
-		    <div class="bcg "
-		     style="background-image:url(<?php bloginfo('template_url'); ?>/images/image2.png);"
-		        data-center="background-position: 50% 0px;"
-		        data-top-bottom="background-position: 50% -500px;"
-		        data-anchor-target="#slide-2">
-		        <div class="hsContainer">
-		            <div class="hsContent"
-		                data-center="opacity: .6;"
-		                data-106-top="opacity: 0;"
-		                data-anchor-target="#slide-2">
-		           
-		            </div>
-		            <section class="hero">
-		            	<h2>Association of Women in Rheumatology</h2>
-					    <div class="button-home">
-					    	<a href="#">Learn More About Us</a>
-					    </div>
-					</section>
-		        </div>
-		    </div>
+			<section class="video">
+				<video controls>
+				  <!-- <source src="somevideo.webm" type="video/webm"> -->
+				  <source src="<?php echo $video; ?>" type="video/mp4">
+				  I'm sorry; your browser doesn't support HTML5 video in WebM with VP8/VP9 or MP4 with H.264.
+				  <!-- You can embed a Flash player here, to play your mp4 video in older browsers -->
+				</video>
+			</section>
 
+			<div class="clear"></div>
+
+			<section class="local-chapters ">
+				<div class="title">
+					<?php echo $titleText; ?>
+				</div>
+				<img src="<?php echo $thumb; ?>" alt="<?php echo $alt; ?>" width="<?php echo $width; ?>" height="<?php echo $height; ?>" />
+				<div class="button">
+					<a href="<?php bloginfo('url'); ?>/local-chapters">
+						<?php echo $button_text; ?>
+					</a>
+				</div>
+			</section>
+
+			
+				<?php
+				$wp_query = new WP_Query();
+				$wp_query->query(array(
+				'post_type'=>'event',
+				'posts_per_page' => 1,
+				'paged' => $paged,
+				'meta_key'	=> 'date',
+				'orderby'	=> 'meta_value_num',
+				'order'		=> 'DESC'
+			));
+				if ($wp_query->have_posts()) : ?>
+			    <?php while ($wp_query->have_posts()) : $wp_query->the_post(); 
+			    $date = get_field('date', false, false);
+				// make date object
+				$date = new DateTime($date);
+				$end_date = get_field('end_date', false, false);
+				// make date object
+				$end_date = new DateTime($end_date);
+				$registration_link = get_field('registration_link');
+			?>	
+					<div class="home-event">
+					<h3>
+						National Conference <?php 
+								if( $end_date != '' ) {
+									echo $date->format('M j') . ' - ' . $end_date->format('j, Y') ; 
+								} else {
+									echo $date->format('j M Y');
+								}
+								?>
+					</h3>
+						<h2><?php the_title(); ?></h2>
+						<div class="date">
+							<?php 
+								if( $end_date != '' ) {
+									echo $date->format('M j') . ' - ' . $end_date->format('j, Y') ; 
+								} else {
+									echo $date->format('j M Y');
+								}
+							?>
+						</div>
+
+						<div class="add-info">
+							<?php echo $additional_information; ?>
+						</div>
+
+						<?php if( $registration_link ) { ?>
+							<div class="button home-button">
+								<a href="<?php echo $registration_link; ?>">Registration is Now Open</a>
+							</div>
+						<?php } ?>
+
+					</div>
+				<?php endwhile; ?>
+				<?php endif; ?>
+			
 
 		</section>
 
-		<section class="skr-slide section purple">
+
+		
+
+			
+		
+
+
+
+		<section class="skr-slide section mission">
 			<div class="small-wrap">
 			    <h2>Our Mission</h2>
 			    <p>To promote the science and practice of rheumatology, foster the advancement and education of women in rheumatology, and advocate access to the highest quality health care and management of patients with rheumatic diseases.</p>
@@ -57,163 +160,7 @@ get_header(); ?>
 		    </div>
 		</section>
 
-		<section id="slide-1" class="skr-slide">
-		    <div class="bcg "
-		     style="background-image:url(<?php bloginfo('template_url'); ?>/images/image1.jpg);"
-		        data-center="background-position: 50% 0px;"
-		        data-top-bottom="background-position: 50% -100px;"
-		        data-anchor-target="#slide-1">
-		        <div class="hsContainer">
-		            <div class="hsContent"
-		                data-center="opacity: 1"
-		                data-106-top="opacity: 0"
-		                data-anchor-target="#slide-1">
-		               
-		            </div>
-		        </div>
-		    </div>
-		</section>
-
-		<section id="slide" class="skr-slide section">
-			<div class="small-wrap">
-			    <h2>Board Members</h2>
-				    <div class="board-member">
-				    	<img src="<?php bloginfo('template_url'); ?>/images/person1.jpg">
-				    	<div class="info">
-				    		<h2>Theresa Lawrence Ford, MD</h2>
-				    	</div>
-				    </div>
-				    <div class="board-member">
-				    	<img src="<?php bloginfo('template_url'); ?>/images/person2.png">
-				    	<div class="info">
-				    		<h2>Grace C. Wright, MD, PhD, FACR</h2>
-				    	</div>
-				    </div>
-				    <div class="board-member">
-				    	<img src="<?php bloginfo('template_url'); ?>/images/person3.jpg">
-				    	<div class="info">
-				    		<h2>Gwenesta B. Melton, MD</h2>
-				    	</div>
-				    </div>
-
-				    <div class="button-home">
-					    	<a href="#">View All</a>
-					    </div>
-			</div>
-		</section>
-
-		<section id="slide-3" class="skr-slide">
-		    <div class="bcg "
-		     style="background-image:url(<?php bloginfo('template_url'); ?>/images/image3.jpg);"
-		        data-center="background-position: 50% 0px;"
-		        data-top-bottom="background-position: 50% -100px;"
-		        data-anchor-target="#slide-3">
-		        <div class="hsContainer">
-		            <div class="hsContent"
-		                data-center="opacity: 1"
-		                data-106-top="opacity: 0"
-		                data-anchor-target="#slide-3">
-		               
-		            </div>
-		        </div>
-		    </div>
-		</section>
-
 		
-		<?php $the_query = new WP_Query();
-				$the_query->query(array(
-				'post_type'=>'partner',
-				'posts_per_page' => -1
-				));
-				if ( $the_query->have_posts() ) :
-			?>
-		<section id="slide" class="skr-slide section">
-			<div class="small-wrap">
-			<h2>Partner Organizations</h2>
-				<div class="flexslider">
-			        <ul class="slides">
-			        <?php 
-
-			        	while ( $the_query->have_posts() ) : ?>
-						<?php $the_query->the_post(); 
-							
-							$image = get_field('partner_logo');
-							$link = get_field('link');
-
-							if( !empty($image) ): 
-
-								// vars
-								$url = $image['url'];
-								$title = $image['title'];
-								$alt = $image['alt'];
-
-								// thumbnail
-								$size = 'large';
-								$thumb = $image['sizes'][ $size ];
-								$width = $image['sizes'][ $size . '-width' ];
-								$height = $image['sizes'][ $size . '-height' ];
-							endif;
-	?>
-			            
-			            <li> 
-			            <?php if( !empty($link)) {echo '<a target="_blank" href="'. $link . '">';} ?>
-			              <img src="<?php echo $thumb; ?>" alt="<?php echo $alt; ?>" width="<?php echo $width; ?>" height="<?php echo $height; ?>" />
-			              <?php if( !empty($link)) { echo '</a>'; } ?>
-			            </li>
-			            
-			           <?php endwhile; ?>
-			      	 </ul><!-- slides -->
-			</div><!-- .flexslider -->
-			</div>
-		</section>
-		<?php endif; ?>
-
-
-		<section id="slide-4" class="skr-slide">
-		    <div class="bcg "
-		     style="background-image:url(<?php bloginfo('template_url'); ?>/images/image4.jpg);"
-		        data-center="background-position: 50% 0px;"
-		        data-top-bottom="background-position: 50% -100px;"
-		        data-anchor-target="#slide-4">
-		        <div class="hsContainer">
-		            <div class="hsContent"
-		                data-center="opacity: 1"
-		                data-106-top="opacity: 0"
-		                data-anchor-target="#slide-3">
-		               
-		            </div>
-		        </div>
-		    </div>
-		</section>
-
-		<section class="slide">
-			<div class="video-wrap">
-			<h3>Who We Are</h3>
-				<video controls>
-				  <!-- <source src="somevideo.webm" type="video/webm"> -->
-				  <source src="/wp-content/uploads/2017/01/who-we-are.mp4" type="video/mp4">
-				  I'm sorry; your browser doesn't support HTML5 video in WebM with VP8/VP9 or MP4 with H.264.
-				  <!-- You can embed a Flash player here, to play your mp4 video in older browsers -->
-				</video>
-			</div>
-		</section>
-
-		<section id="slide-5" class="skr-slide">
-		    <div class="bcg "
-		     style="background-image:url(<?php bloginfo('template_url'); ?>/images/image5.jpg);"
-		        data-center="background-position: 50% 0px;"
-		        data-top-bottom="background-position: 50% -100px;"
-		        data-anchor-target="#slide-5">
-		        <div class="hsContainer">
-		            <div class="hsContent"
-		                data-center="opacity: 1"
-		                data-106-top="opacity: 0"
-		                data-anchor-target="#slide-5">
-		               
-		            </div>
-		        </div>
-		    </div>
-		</section>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->

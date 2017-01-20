@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Events
+ * Template Name: Past Events
  */
 
 get_header(); 
@@ -29,7 +29,7 @@ get_header();
 				'paged' => $paged,
 				'meta_key'	=> 'date',
 				'orderby'	=> 'meta_value_num',
-				'order'		=> 'DESC'
+				'order'		=> 'ASC'
 			));
 			if ($wp_query->have_posts()) : ?>
 			<section class="events">
@@ -67,7 +67,7 @@ get_header();
 			//echo $today . ' | ' . $end_date;
 
 			// Only upcoming Dates
-			if ( $compareDate >= $today ) :
+			if ( $compareDate <= $today ) :
 			?>
 
 

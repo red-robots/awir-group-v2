@@ -62,41 +62,49 @@ jQuery(document).ready(function ($) {
 	*	Flexslider
 	*
 	------------------------------------*/
-	(function() {
+	// (function() {
  
-	  // store the slider in a local variable
-	  var $window = $(window),
-	      flexslider = { vars:{} };
+	//   // store the slider in a local variable
+	//   var $window = $(window),
+	//       flexslider = { vars:{} };
 	 
-	  // tiny helper function to add breakpoints
-	  function getGridSize() {
-	    return (window.innerWidth < 600) ? 2 :
-	           (window.innerWidth < 900) ? 2 : 3;
-	  }
+	//   // tiny helper function to add breakpoints
+	//   function getGridSize() {
+	//     return (window.innerWidth < 600) ? 2 :
+	//            (window.innerWidth < 900) ? 2 : 3;
+	//   }
 	 
-	  $(function() {
-	    SyntaxHighlighter.all();
-	  });
+	//   $(function() {
+	//     SyntaxHighlighter.all();
+	//   });
 	 
-	  $window.load(function() {
-	    $('.flexslider').flexslider({
-	      animation: "slide",
-	      animationLoop: false,
-	      itemWidth: 210,
-	      itemMargin: 10,
-	      minItems: getGridSize(), // use function to pull in initial value
-	      maxItems: getGridSize() // use function to pull in initial value
-	    });
-	  });
+	//   $window.load(function() {
+	//     $('.flexslider').flexslider({
+	//       animation: "slide",
+	//       animationLoop: false,
+	//       itemWidth: 210,
+	//       itemMargin: 10,
+	//       minItems: getGridSize(), // use function to pull in initial value
+	//       maxItems: getGridSize() // use function to pull in initial value
+	//     });
+	//   });
 	 
-	  // check grid size on resize event
-	  $window.resize(function() {
-	    var gridSize = getGridSize();
+	//   // check grid size on resize event
+	//   $window.resize(function() {
+	//     var gridSize = getGridSize();
 	 
-	    flexslider.vars.minItems = gridSize;
-	    flexslider.vars.maxItems = gridSize;
-	  });
-	}());
+	//     flexslider.vars.minItems = gridSize;
+	//     flexslider.vars.maxItems = gridSize;
+	//   });
+	// }());
+
+	$('.flexslider').imagesLoaded( function() {
+		$('.flexslider').flexslider({
+			animation: "fade",
+			slideshowSpeed: 5000,
+			smoothHeight: false,
+		}); // end register flexslider
+	});
 	
 	/*
 	*

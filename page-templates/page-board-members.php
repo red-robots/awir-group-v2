@@ -38,9 +38,12 @@ get_header();
 			    		$postClass = 'first';
 			    	}
 
+			    	$person = get_the_title();
+					$santi = sanitize_title_with_dashes($person);
+
 			    ?>
 
-			    <div class="boardmember <?php echo $postClass; ?> js-blocks wow fadeInUp">
+			    <div class="boardmember <?php echo $postClass; ?> js-blocks wow fadeInUp" id="<?php echo $santi; ?>">
 			    	<div class="member-details">
 			    	<div class="member-photo">
 			    		<?php echo wp_get_attachment_image( $photo, $size ); ?>

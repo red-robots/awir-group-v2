@@ -79,7 +79,7 @@ html[xmlns] .flexslider .slides {
   position: relative;
   zoom: 1;
   li {
-    margin: 0 5px;
+    // margin: 0 5px;
     img {width: 100%;}
   }
 }
@@ -193,6 +193,7 @@ html[xmlns] .flexslider .slides {
   position: absolute;
   bottom: -40px;
   text-align: center;
+  display: none;
 }
 .flex-control-nav li {
   margin: 0 6px;

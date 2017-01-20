@@ -6,7 +6,7 @@
  *
  * @package ACStarter
  */
-
+add_image_size('large-square', 350, 350, true);
 /*-------------------------------------
 	Custom client login, link and title.
 ---------------------------------------*/

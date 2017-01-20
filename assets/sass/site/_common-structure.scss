@@ -90,6 +90,10 @@ header#masthead {
 	@media screen and (min-width: $deskwidth) {
 		/*width: 1200px;*/
 	}
+
+	h3 {
+		color: #fff;
+	}
 }
 .content-block {
 	background-color: #000;
@@ -97,9 +101,12 @@ header#masthead {
 }
 article.article {
 	padding: 2%;
+	    width: 100%;
+    float: left;
 }
 article.page {
 	color: #fff;
+
 }
 /* Logo */
 .logo , h1.logo {
@@ -170,6 +177,9 @@ article.page {
 .skr-slide {
 	width: 100%;
 	float: left;
+}
+section.mission {
+	color: #fff;
 }
 .bcg, .bcg-page, .bcg-page-secondary {
     background-position: top center;
@@ -350,11 +360,12 @@ section.hero {
 section.page-hero {
 	width: 100%;
 	float: left;
-	margin: 5% 0 0 0%;
+	margin: 0;
 	color: #fff;
 	h2 {
-		font-size: 36px;
+		font-size: 44px;
 		font-weight: 300;
+		margin: 0 0 0 0;
 	}
 
 }

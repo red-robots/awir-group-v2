@@ -25,11 +25,7 @@ get_header();
 
 			?>
 <div class="wrapper">
-				<article id="post-<?php the_ID(); ?>" class="content-section-page "
-					data-anchor-target="#slide-page"
-				data--100-top="opacity:1;margin-top: 0px;"
-				data-center-center="opacity:1; margin-top: 100px;"
-				>
+				<article id="post-<?php the_ID(); ?>" class="content-section-page ">
 
 					<section class="small-width">
 						<div class="entry-content">
