@@ -173,3 +173,13 @@ function ac_first_and_last_menu_class($items) {
   return $items;
 }
 add_filter('wp_nav_menu_objects', 'ac_first_and_last_menu_class');
+/*-------------------------------------
+
+  Filter the "Protected" on password posts
+
+---------------------------------------*/
+function acc_title_format($content) {
+  return '%s';
+}
+add_filter('private_title_format', 'acc_title_format');
+add_filter('protected_title_format', 'acc_title_format');

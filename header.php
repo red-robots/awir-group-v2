@@ -74,7 +74,31 @@ $instagram = get_field('instagram_link', 'option');
 
 			</div><!-- header right -->
 
+<?php 
+	/// optional banner before nav
+	$image = get_field('banner_image','option');
+	$imageLink = get_field('image_link','option');
 
+	if( !empty($image) ): 
+
+	// vars
+	$url = $image['url'];
+	$title = $image['title'];
+	$alt = $image['alt'];
+	$caption = $image['caption'];
+
+	// thumbnail
+	$size = 'large';
+	$thumb = $image['sizes'][ $size ];
+	$width = $image['sizes'][ $size . '-width' ];
+	$height = $image['sizes'][ $size . '-height' ];
+?>
+	<div class="top-banner">
+	 	<?php if( $imageLink ) { ?><a href="<?php echo $imageLink; ?>"><?php } ?>
+	 		<img src="<?php echo $thumb; ?>" alt="<?php echo $alt; ?>" width="<?php echo $width; ?>" height="<?php echo $height; ?>" />
+	 <?php if( $imageLink ) { ?></a><?php } ?>
+	 </div>
+	<?php endif; ?>
 	</div><!-- wrapper -->
 
 	 <div id="mynav">
@@ -84,7 +108,7 @@ $instagram = get_field('instagram_link', 'option');
 		</nav><!-- #site-navigation -->
 	</div>
 	
-	
+
 	</header><!-- #masthead -->
 
 	<div id="content" class="site-content ">

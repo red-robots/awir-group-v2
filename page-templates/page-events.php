@@ -25,7 +25,7 @@ get_header();
 			$wp_query = new WP_Query();
 			$wp_query->query(array(
 				'post_type'=>'event',
-				'posts_per_page' => 10,
+				'posts_per_page' => 1,
 				'paged' => $paged,
 				'meta_key'	=> 'date',
 				'orderby'	=> 'meta_value_num',

@@ -66,9 +66,9 @@ get_header();
 		</main><!-- #main -->
 	</div><!-- #primary -->
 
-<section class="sponsors">
-	<div class="widget-area">
-	
+<!-- <section class="sponsors"> -->
+	<div class="widget-area transparent-black">
+	<h3>Corporate Members</h3>
 		<?php if(have_rows('platinum_members_corp')) : ?>
 			<div class="sponsor">
 				<h3 class="platinum">Platinum</h3>
@@ -156,7 +156,7 @@ get_header();
 		<?php endif; ?>
 			
 	</div><!-- widget area -->
-</section>
+<!-- </section> -->
 
 
 <?php endwhile; // End of the loop. ?>

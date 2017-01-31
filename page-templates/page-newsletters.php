@@ -10,9 +10,16 @@ get_header();
 ?>
 <div class="wrapper">
 
+<div class="content-area-full content-block">
+	<div class="widget-wrap center">
+		<h2>NEWS FROM THE ASSOCIATION</h2>
+		<h3>YOUR NEWSLETTER IS ACCESSIBLE HERE</h3>
+	 
+	You missed your mailing? ....Find your newsletter here
+	</div>
+</div>
 
-
-	<div id="primary" class="content-area-full">
+	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 
 			<?php
@@ -56,21 +63,12 @@ get_header();
 		</main><!-- #main -->
 	</div><!-- #primary -->
 
-	<!-- <div class="widget-area">
-		<h2>Archives</h2>
-		<?php $args = array(
-			'type'            => 'monthly',
-			'limit'           => '',
-			'format'          => 'html', 
-			'before'          => '',
-			'after'           => '',
-			'show_post_count' => false,
-			'echo'            => 1,
-			'order'           => 'DESC',
-		        'post_type'     => 'newsletter'
-		);
-		//wp_get_archives( $args ); ?>
-	</div> -->
+	<div class="widget-area content-block article">
+		<div class="widget-wrap">
+			<h2>Subscribe to Our Newsletter Here</h2>
+			-- Form to go here --
+		</div>
+	</div>
 </div>
 <?php
 get_footer();

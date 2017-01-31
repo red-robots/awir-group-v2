@@ -82,6 +82,12 @@ wp_reset_postdata();
 						<?php echo $button_text; ?>
 					</a>
 				</div>
+
+				<div class="button">
+					<a href="<?php bloginfo('url'); ?>/newsletter">
+						Subscribe to Our Newsletter Here
+					</a>
+				</div>
 			</section>
 
 			

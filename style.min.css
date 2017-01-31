@@ -1259,7 +1259,7 @@ html{box-sizing:border-box}
 blockquote,q{quotes:"" ""}
 blockquote:before,blockquote:after,q:before,q:after{content:""}
 hr{background-color:#ccc;border:0;height:1px;margin-bottom:1.5em}
-ul,ol{margin:0 0 1.5em 3em}
+ul,ol{margin:0 0 1.5em 1.5em}
 ul{list-style:disc}
 ol{list-style:decimal}
 li>ul,li>ol{margin-bottom:0;margin-left:1.5em}
@@ -1280,7 +1280,7 @@ a:hover,a:focus,a:active{color:midnightblue}
 a:focus{outline:thin dotted}
 a:hover,a:active{outline:0}
 .main-navigation{width:100%;margin:10px 0 0 0;text-align:center;background-color:rgba(0,0,0,0.9)}
-@media screen and (min-width:600px){.main-navigation{float:right;text-align:left}
+@media screen and (min-width:600px){.main-navigation{float:right;text-align:left;margin:-1px 0 0 0}
 }.main-navigation ul{display:none;list-style:none;margin:0;padding-left:0}
 .main-navigation ul ul{background-color:#573276;display:block;z-index:99999;background-color:#fff}
 @media screen and (min-width:600px){.main-navigation ul ul{float:left;position:absolute;top:4em;left:-999em}
@@ -1318,8 +1318,8 @@ a:hover,a:active{outline:0}
 .screen-reader-text{clip:rect(1px,1px,1px,1px);position:absolute !important;height:1px;width:1px;overflow:hidden}
 .screen-reader-text:focus{background-color:#f1f1f1;border-radius:3px;box-shadow:0 0 2px 2px rgba(0,0,0,0.6);clip:auto !important;color:#21759b;display:block;font-size:14px;font-size:.875rem;font-weight:bold;height:auto;left:5px;line-height:normal;padding:15px 23px 14px;text-decoration:none;top:5px;width:auto;z-index:100000}
 #content[tabindex="-1"]:focus{outline:0}
-.alignleft{display:inline;float:left;margin-right:1.5em}
-.alignright{display:inline;float:right;margin-left:1.5em}
+.alignleft{display:inline;float:left;margin-right:1.5em;margin-bottom:1.5em}
+.alignright{display:inline;float:right;margin-left:1.5em;margin-bottom:1.5em}
 .aligncenter{clear:both;display:block;margin-left:auto;margin-right:auto}
 .clear:before::after,.clear:after::after,.entry-content:before::after,.entry-content:after::after,.comment-content:before::after,.comment-content:after::after,.site-header:before::after,.site-header:after::after,.site-content:before::after,.site-content:after::after,.site-footer:before::after,.site-footer:after::after{clear:both;content:"";display:table}
 .clear:after,.entry-content:after,.comment-content:after,.site-header:after,.site-content:after,.site-footer:after{clear:both}
@@ -1408,13 +1408,16 @@ html[xmlns] .flexslider .slides{display:block}
 div{-ms-hyphens:none;-moz-hyphens:none;-webkit-hyphens:none;hyphens:none}
 html{min-height:100%;background:#573276;background:-webkit-radial-gradient(center,ellipse cover,#573276 0,#573276 24%,#573276 24%,black 100%);background:-webkit-radial-gradient(center ellipse,#573276 0,#573276 24%,#573276 24%,black 100%);background:radial-gradient(ellipse at center,#573276 0,#573276 24%,#573276 24%,black 100%);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#573276',endColorstr='#000000',GradientType=1)}
 .clear{clear:both}
-#content{width:100%;float:left;min-height:700px;margin-top:10px}
+#content{width:100%;float:left;margin-top:10px}
 #page{width:80%;margin:0 auto}
 #primary{float:left}
 .wrapper{width:100%;margin:0 auto;padding:0 20px}
 @media screen and (min-width:600px){.wrapper{width:100%}
 }@media screen and (min-width:1200px){.wrapper{padding:0}
 }header#masthead{background-color:#fff;width:100%;float:left}
+.top-banner{width:100%;float:left;margin:0}
+.top-banner a{display:block;line-height:0}
+.top-banner img{width:100%}
 .content-area{width:100%;margin:0 auto}
 @media screen and (min-width:600px){.content-area{width:66%;float:left;margin:50px 0 0 0}
 }@media screen and (min-width:1200px){}
@@ -1424,7 +1427,9 @@ html{min-height:100%;background:#573276;background:-webkit-radial-gradient(cente
 @media screen and (min-width:600px){.widget-area{width:26%;float:right;margin:50px 0 0 0}
 }@media screen and (min-width:1200px){}
 .widget-area h3{color:#fff}
-.content-block{background-color:#000;color:#fff}
+.widget-wrap{padding:20px}
+.transparent-black{background-color:rgba(0,0,0,0.5);padding:1%}
+.content-block{background-color:#000;color:#fff;margin-bottom:30px}
 article.article{padding:2%;width:100%;float:left}
 article.page{color:#fff}
 .logo,h1.logo{width:300px;height:85px;background-image:url(images/logo.png);background-size:cover;background-repeat:no-repeat;margin:10px auto}
@@ -1611,8 +1616,8 @@ section.single-event .resources{width:100%;float:left}
 section.single-event .resources .resource{width:45%;display:inline-block}
 section.single-event .resources .resource a{background-color:rgba(87,50,118,0.8);border:1px solid #573276;display:block;-webkit-transition:all ease .3s;transition:all ease .3s;color:#fff;text-decoration:none;padding:10px 0;border-radius:5px;text-align:center}
 section.single-event .resources .resource a:hover{background-color:#573276}
-section.sponsors{color:#fff}
-section.sponsors .thanks{color:#573276;font-style:italic;font-size:22px}
+section.sponsors{color:#fff;width:100%;float:left;margin:0 0 40px 0;border-bottom:1px solid rgba(255,255,255,0.3);background-color:rgba(0,0,0,0.5)}
+section.sponsors .thanks{color:#ff;font-style:italic;font-size:22px}
 section.sponsors .sponsor{width:100%;float:left;margin:20px auto;background-color:#000}
 section.sponsors .sponsor img{max-width:100%}
 section.sponsors .sponsor p.desc{padding:5px 0;border-top:1px solid #ccc}
@@ -1655,6 +1660,11 @@ section.pagelinks .link{width:100%;float:left;margin:1.6%}
 .leader .contact{width:100%;float:left}
 .leader .contact a{display:block;background-color:#573276;color:#fff !important;text-decoration:none;border:2px solid white;text-align:center;padding:5px 15px;font-size:20px;border-radius:5px;-webkit-transition:all .3s ease;transition:all .3s ease}
 .leader .contact a:hover{background-color:rgba(255,255,255,0.2)}
+.pdf-row{width:100%;float:left;margin:0 0 30px 0;border-bottom:#573276 1px solid;padding-bottom:10px}
+.pdf-row .thumb{width:50px;height:50px;float:left;margin:0 20px 0 0}
+.pdf-row .pdf-link{width:90%;float:left}
+.pdf-row .pdf-link a{text-decoration:none;color:#fff;font-size:26px;display:block;-webkit-transition:all ease .3s;transition:all ease .3s;padding:10px}
+.pdf-row .pdf-link a:hover{background-color:rgba(255,255,255,0.2)}
 .blog .format-aside .entry-title,.archive .format-aside .entry-title{display:none}
 .comment-content a{word-wrap:break-word}
 .bypostauthor{display:block}

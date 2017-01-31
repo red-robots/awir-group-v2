@@ -9,14 +9,10 @@
 
 get_header(); 
 
-get_template_part('template-parts/title');
+// get_template_part('template-parts/title');
 
 ?>
 <div class="wrapper">
-
-	<!-- <header class="page-title">
-		<h1><?php the_title(); ?></h1>
-	</header> -->
 
 	<div id="primary" class="content-area-full">
 		<main id="main" class="site-main" role="main">
@@ -34,114 +30,49 @@ get_template_part('template-parts/title');
 
 
 			<section class="single-event">
-				<div class="left">
-					<div class="member-photo">
-			    		<?php echo wp_get_attachment_image( $photo, $size ); ?>
-			    	</div>
-			    	
-				</div>
-				<div class="right">
-					<div class="address"><?php echo $address; ?></div>
-					<div class="desc"><?php echo $description; ?></div>
-					<?php if(have_rows('resource_links')) : ?>
+				
+				<?php if(have_rows('meeting_content')) : ?>
 						<div class="resources">
-							<?php while(have_rows('resource_links')) : the_row();
+							<?php while(have_rows('meeting_content')) : the_row();
 
-								$label_name = get_sub_field('label_name');
-								$link_or_pdf = get_sub_field('link_or_pdf');
-								$link = get_sub_field('link');
+								$image = get_sub_field('thumbnail');
+								$title = get_sub_field('title');
 								$pdf = get_sub_field('pdf');
 
-								if( $link_or_pdf == 'PDF' ) {
-									$output = $link;
-								} else {
-									$output = $pdf;
-								}
+								$url = $image['url'];
+								$alt = $image['alt'];
+								$caption = $image['caption'];
+
+								// thumbnail
+								$size = 'thumbnail';
+								$thumb = $image['sizes'][ $size ];
+								$width = $image['sizes'][ $size . '-width' ];
+								$height = $image['sizes'][ $size . '-height' ];
+
+								
 							?>
-								<div class="resource">
-									<a href="<?php echo $output; ?>"><?php echo $label_name; ?></a>
+								
+							<div class="pdf-row">
+								<div class="thumb">
+									<img src="<?php echo $thumb; ?>" alt="<?php echo $alt; ?>" width="<?php echo $width; ?>" height="<?php echo $height; ?>" />
 								</div>
+								<div class="pdf-link">
+									<a href="<?php echo $pdf; ?>"><?php echo $title; ?></a>
+								</div>
+							</div>
+								
+
+
 							<?php endwhile; ?>
 						</div>
 					<?php endif; ?>
-				</div>
+				
 			</section>
 
 
 
 
-			<section class="sponsors">
-
-			<header class="page-title">
-				<h2>Sponsors</h2>
-				<div class="thanks">Thank you for the support</div>
-			</header>
-
-				<?php if(have_rows('platinum_sponsors')) : ?>
-					<div class="sponsor sponsor-event ">
-					<h3 class="platinum">Platinum</h3>
-					<div class="content">
-					<?php while(have_rows('platinum_sponsors')) : the_row(); 
-						$sponsorName = get_sub_field('sponsor_name_platinum');
-					?>
-
-					<div class="name">
-						<?php echo $sponsorName; ?>
-					</div>
-
-				<?php endwhile; ?>
-				</div></div>
-			<?php endif; ?>
-
-			<?php if(have_rows('gold_sponsors')) : ?>
-					<div class="sponsor sponsor-event ">
-					<h3 class="gold">Gold</h3>
-					<div class="content">
-					<?php while(have_rows('gold_sponsors')) : the_row(); 
-						$sponsorName = get_sub_field('sponsor_name_gold');
-					?>
-
-					<div class="name">
-						<?php echo $sponsorName; ?>
-					</div>
-
-				<?php endwhile; ?>
-				</div></div>
-			<?php endif; ?>
-
-			<?php if(have_rows('silver_sponsors')) : ?>
-					<div class="sponsor sponsor-event ">
-					<h3 class="silver">Silver</h3>
-					<div class="content">
-					<?php while(have_rows('silver_sponsors')) : the_row(); 
-						$sponsorName = get_sub_field('sponsor_name_silver');
-					?>
-
-					<div class="name">
-						<?php echo $sponsorName; ?>
-					</div>
-
-				<?php endwhile; ?>
-				</div></div>
-			<?php endif; ?>
-
-			<?php if(have_rows('bronze_sponsors')) : ?>
-					<div class="sponsor sponsor-event ">
-					<h3 class="bronze">Bronze</h3>
-					<div class="content">
-					<?php while(have_rows('bronze_sponsors')) : the_row(); 
-						$sponsorName = get_sub_field('sponsor_name_bronze');
-					?>
-
-					<div class="name">
-						<?php echo $sponsorName; ?>
-					</div>
-
-				<?php endwhile; ?>
-				</div></div>
-			<?php endif; ?>
-
-			</section>
+			
 
 		<?php endwhile; // End of the loop.
 		?>

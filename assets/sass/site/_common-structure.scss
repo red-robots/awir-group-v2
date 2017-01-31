@@ -23,7 +23,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#573276', end
 	width: 100%;
 	float: left;
 	// background-color: #F5F5F5;
-	min-height: 700px;
+	// min-height: 700px;
 	margin-top: 10px;
 }
 #page {
@@ -51,6 +51,19 @@ header#masthead {
 	background-color: #fff;
 	width: 100%;
 	float: left;
+}
+.top-banner {
+	width: 100%;
+	float: left;
+	margin: 0;
+
+	a {
+		display: block;
+		line-height: 0;
+	}
+	img {
+		width: 100%;
+	}
 }
 .content-area {
 	width: 100%;
@@ -95,9 +108,17 @@ header#masthead {
 		color: #fff;
 	}
 }
+.widget-wrap {
+	padding: 20px;
+}
+.transparent-black {
+	background-color: rgba(0,0,0,.5);
+	padding: 1%;
+}
 .content-block {
 	background-color: #000;
 	color: #fff;
+	margin-bottom: 30px;
 }
 article.article {
 	padding: 2%;

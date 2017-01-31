@@ -629,8 +629,13 @@ section.single-event {
 }
 section.sponsors {
 	color: #fff;
+	width: 100%;
+	float: left;
+	margin: 0 0 40px 0;
+	border-bottom: 1px solid rgba(255,255,255,.3);
+	background-color: rgba(0,0,0,.5);
 	.thanks {
-		color: $color-purple;
+		color: #ff;
 		font-style: italic;
 		font-size: 22px;
 	}
@@ -846,4 +851,35 @@ section.pagelinks {
 		}
 	}
 	
+}
+.pdf-row {
+	width: 100%;
+	float: left;
+	margin: 0 0 30px 0;
+	border-bottom: $color-purple 1px solid;
+	padding-bottom: 10px;
+
+	.thumb {
+		width: 50px;
+		height: 50px;
+		float: left;
+		margin: 0 20px 0 0;
+	}
+	.pdf-link {
+		width: 90%;
+		float: left;
+
+		a {
+			text-decoration: none;
+			color: #fff;
+			font-size: 26px;
+			display: block;
+			@include transition(all ease .3s);
+			padding: 10px;
+
+			&:hover {
+				background-color: rgba(255,255,255,.2);
+			}
+		}
+	}
 }
