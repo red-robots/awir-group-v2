@@ -50,16 +50,23 @@ wp_reset_postdata();
 
 	?>
 
+	<section class="home-banner" style="background-image: url(<?php bloginfo('template_url'); ?>/images/home-banner.png);">
+			<section class="home-hero">
+				<h2>Association of Women in Rheumatology</h2>
+			</section>
+		</section>
+		
 	<div id="primary" class="content-area-full">
 		<main id="main" class="site-main" role="main">
 
 	
+		
+
+
 
 		<section class="page-hero">
 			
-			<section class="home-hero">
-				<h2>Association of Women in Rheumatology</h2>
-			</section>
+			
 
 			<section class="video">
 				<video controls>

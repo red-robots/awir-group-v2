@@ -1279,8 +1279,8 @@ a{color:#0999f3}
 a:hover,a:focus,a:active{color:midnightblue}
 a:focus{outline:thin dotted}
 a:hover,a:active{outline:0}
-.main-navigation{width:100%;margin:10px 0 0 0;text-align:center;background-color:rgba(0,0,0,0.9)}
-@media screen and (min-width:600px){.main-navigation{float:right;text-align:left;margin:-1px 0 0 0}
+.main-navigation{width:100%;margin:10px 0 0 0;text-align:center}
+@media screen and (min-width:600px){.main-navigation{float:right;text-align:left;margin:70px 0 0 0;width:60%}
 }.main-navigation ul{display:none;list-style:none;margin:0;padding-left:0}
 .main-navigation ul ul{background-color:#573276;display:block;z-index:99999;background-color:#fff}
 @media screen and (min-width:600px){.main-navigation ul ul{float:left;position:absolute;top:4em;left:-999em}
@@ -1292,11 +1292,11 @@ a:hover,a:active{outline:0}
 @media screen and (min-width:600px){.main-navigation ul ul a{width:200px}
 }.main-navigation ul ul :hover>a,.main-navigation ul ul .focus>a{background-color:rgba(87,50,118,0.8)}
 .main-navigation ul li:hover>ul,.main-navigation ul li.focus>ul{left:auto}
-.main-navigation li{float:left;position:relative;-webkit-box-flex:1;-webkit-flex-grow:1;-ms-flex-positive:1;flex-grow:1;text-transform:uppercase;line-height:4;width:100%;font-size:16px;text-align:center}
+.main-navigation li{float:left;position:relative;text-transform:uppercase;line-height:4;width:100%;font-size:14px;text-align:center}
 @media screen and (min-width:600px){.main-navigation li{width:auto}
-}.main-navigation li:hover>a,.main-navigation li.focus>a{background-color:#573276}
-.main-navigation a{display:block;text-decoration:none;color:#fff;padding:0 20px}
-.main-navigation .current_page_item>a,.main-navigation .current-menu-item>a,.main-navigation .current_page_ancestor>a,.main-navigation .current-menu-ancestor>a{background-color:#573276}
+}.main-navigation li:hover>a,.main-navigation li.focus>a{color:#573276}
+.main-navigation a{display:block;text-decoration:none;color:#000}
+.main-navigation .current_page_item>a,.main-navigation .current-menu-item>a,.main-navigation .current_page_ancestor>a,.main-navigation .current-menu-ancestor>a{color:#573276}
 .menu-toggle,.main-navigation.toggled ul{display:block}
 .menu-toggle ul.sub-menu,.main-navigation.toggled ul ul.sub-menu{background-color:rgba(255,255,255,0.1)}
 @media screen and (min-width:600px){.menu-toggle{display:none}
@@ -1406,14 +1406,14 @@ html[xmlns] .flexslider .slides{display:block}
 .widget select{max-width:100%}
 *{-webkit-hyphens:none}
 div{-ms-hyphens:none;-moz-hyphens:none;-webkit-hyphens:none;hyphens:none}
-html{min-height:100%;background:#573276;background:-webkit-radial-gradient(center,ellipse cover,#573276 0,#573276 24%,#573276 24%,black 100%);background:-webkit-radial-gradient(center ellipse,#573276 0,#573276 24%,#573276 24%,black 100%);background:radial-gradient(ellipse at center,#573276 0,#573276 24%,#573276 24%,black 100%);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#573276',endColorstr='#000000',GradientType=1)}
+html{min-height:100%;background:black;background:-webkit-linear-gradient(-45deg,black 0,#803f99 100%);background:-webkit-linear-gradient(315deg,black 0,#803f99 100%);background:linear-gradient(135deg,black 0,#803f99 100%);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#000000',endColorstr='#803f99',GradientType=1)}
 .clear{clear:both}
-#content{width:100%;float:left;margin-top:10px}
-#page{width:80%;margin:0 auto}
+#content{width:100%;float:left}
+#page{width:100%;margin:0 auto}
 #primary{float:left}
-.wrapper{width:100%;margin:0 auto;padding:0 20px}
+.wrapper{width:100%;margin:0 auto;padding:0 20px;position:relative}
 @media screen and (min-width:600px){.wrapper{width:100%}
-}@media screen and (min-width:1200px){.wrapper{padding:0}
+}@media screen and (min-width:1200px){.wrapper{width:96%;padding:0;margin:0 2%}
 }header#masthead{background-color:#fff;width:100%;float:left}
 .top-banner{width:100%;float:left;margin:0}
 .top-banner a{display:block;line-height:0}
@@ -1432,13 +1432,12 @@ html{min-height:100%;background:#573276;background:-webkit-radial-gradient(cente
 .content-block{background-color:#000;color:#fff;margin-bottom:30px}
 article.article{padding:2%;width:100%;float:left}
 article.page{color:#fff}
-.logo,h1.logo{width:300px;height:85px;background-image:url(images/logo.png);background-size:cover;background-repeat:no-repeat;margin:10px auto}
-@media screen and (min-width:600px){.logo,h1.logo{width:250px;height:75px;float:left;margin:20px 0}
-}@media screen and (min-width:1200px){.logo,h1.logo{width:485px;height:154px}
-}.logo a,h1.logo a{width:300px;height:85px;display:block;text-indent:-9000px}
-@media screen and (min-width:600px){.logo a,h1.logo a{width:250px;height:75px}
-}@media screen and (min-width:1200px){.logo a,h1.logo a{width:485px;height:154px}
-}.skrollable-after .logo{width:200px;height:64px}
+.head-flex{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:justify;-webkit-justify-content:space-between;-ms-flex-pack:justify;justify-content:space-between}
+.logo,h1.logo{width:80%;margin:10px auto}
+.logo img,h1.logo img{width:100%}
+@media screen and (min-width:600px){.logo,h1.logo{width:30%;float:left;margin:10px 0 0 0}
+}.logo a,h1.logo a{display:block}
+.skrollable-after .logo{width:200px;height:64px}
 @media screen and (min-width:600px){.skrollable-after .logo{width:200px;height:64px}
 }.skrollable-after .logo a{width:200px;height:64px}
 @media screen and (min-width:600px){.skrollable-after .logo a{width:200px;height:64px}
@@ -1446,10 +1445,13 @@ article.page{color:#fff}
 .skr-slide{width:100%;float:left}
 section.mission{color:#fff}
 .bcg,.bcg-page,.bcg-page-secondary{background-position:top center;background-repeat:no-repeat;background-attachment:fixed;background-size:cover;height:100%;width:100%;position:relative}
-.header-right{width:auto;display:inline-block;float:right;padding:2%}
-.social{width:auto;display:inline-block}
-@media screen and (min-width:600px){.social{float:right;margin:0 20px 30px 0}
-}.social i{width:30px;height:30px;position:relative;-webkit-transition:all .1s ease;transition:all .1s ease;margin:0 0 0 10px;font-size:30px}
+.header-top{width:auto;display:inline-block;top:0;right:0;position:absolute}
+.header-top .buttons{width:auto;display:inline-block;float:left}
+.header-top .button{width:auto;display:inline-block}
+.header-top .button a{background-color:#eaeaec;border:0}
+.social{width:auto;display:inline-block;margin:10px 0 0 0}
+@media screen and (min-width:600px){.social{float:right}
+}.social i{width:25px;height:25px;position:relative;-webkit-transition:all .1s ease;transition:all .1s ease;margin:0 0 0 10px;font-size:25px}
 .social i:hover{-webkit-transform:scale(1.4);-ms-transform:scale(1.4);transform:scale(1.4)}
 .social i a{width:30px;height:30px;position:absolute;top:0;left:0;text-indent:-9000px;display:block}
 .social i a:hover:before{visibility:hidden}
@@ -1473,7 +1475,7 @@ section.mission{color:#fff}
 .button a:hover{background-color:#573276;color:#fff}
 .button-purple a{width:100%;display:inline-block;padding:10px 15px;margin:0 0 10px 0;text-align:center;background-color:#573276;color:#fff;text-decoration:none;border:1px solid #573276;-webkit-transition:all ease .3s;transition:all ease .3s}
 .button-purple a:hover{background-color:white;color:#573276}
-section.hero{width:70%;float:left;margin:5% 0 0 5%;color:#fff}
+section.hero{width:70%;position:absolute;top:30%;left:10%;color:#fff}
 section.hero h2{font-size:36px;font-weight:300}
 section.page-hero{width:100%;float:left;margin:0;color:#fff}
 section.page-hero h2{font-size:44px;font-weight:300;margin:0}
@@ -1503,6 +1505,7 @@ section.subnav a:hover{background-color:#573276}
 .single .byline,.group-blog .byline{display:inline}
 .page-content,.entry-content,.entry-summary{margin:1.5em 0 0}
 .page-links{clear:both;margin:0 0 1.5em}
+section.home-banner{width:100%;height:70vh;background-size:contain;position:relative;background-attachment:fixed;background-repeat:no-repeat;background-position:center;top:0;left:0;overflow-x:hidden}
 section.home-hero{width:100%;float:left}
 @media screen and (min-width:600px){section.home-hero{width:60%;float:left}
 }section.video{width:100%;float:left}
