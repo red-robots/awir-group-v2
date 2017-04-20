@@ -30,8 +30,6 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', end
 	margin: 0 auto;
 }
 #primary {
-	// width: 100%;
-	float: left;
 }
 .wrapper {
 	width: 100%;
@@ -84,7 +82,6 @@ header#masthead {
 	margin: 0px auto;
 	
 	@media screen and (min-width: $tabwidth) {
-		float: left;
 		margin: 50px 0 0 0;
 	}
 	@media screen and (min-width: $deskwidth) {
@@ -490,7 +487,6 @@ section.page-hero {
 }
 article.hentry {
 	width: 100%;
-	float: left;
 
 }
 article.content-section-page, section.content-section-page {
