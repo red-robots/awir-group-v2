@@ -489,24 +489,31 @@ section.education {
 	}
 }
 .learnmore{
-		width: 100%;
-        text-align: right;
-		a {
-			width: auto;
-			display: inline-block;
-			padding: 15px 20px;
-			background-color: rgba($color-purple, .8);
-			border: 1px solid rgba(#fff, 1);
-			border-radius: 5px; 
-			@include transition(all ease .3s);
-			color: #fff;
-			text-decoration: none;
-
-			&:hover {
-				background-color: rgba($color-purple, 1);
-			}
+	width: 100%;
+    text-align: right;
+	a {
+		width: auto;
+		display: inline-block;
+		padding: 10px 20px;
+		background-color: rgba(#fff, .0);
+		border: 1px solid rgba(#fff, 1);
+		// border-radius: 5px; 
+		@include transition(all ease .3s);
+		color: #fff;
+		text-decoration: none;
+		font-size: 20pt;
+		line-height: 28pt;
+		font-weight: 300;
+		&:hover {
+			background-color: rgba($color-purple, 1);
 		}
 	}
+	i {
+		font-size: 28pt;
+		line-height: 28pt;
+		opacity: .3;
+	}
+}
 .template-clinical-trials {
   section.intro {
     width: 100%;
@@ -528,7 +535,7 @@ section.education {
         >.left {
           margin: 0 0 20px 0;
           @media screen and (min-width: $tabwidth) {
-            width: 40%;
+            width: 35%;
             float: left;
             margin: 0;
           }
@@ -536,14 +543,14 @@ section.education {
         >.right {
           @media screen and (min-width: $tabwidth) {
             width: 60%;
-            float: left;
+            float: right;
           }
         }
       }
       >.right {
         margin: 0;
         @media screen and (min-width: $tabwidth) {
-          float: left;
+          float: right;
           width: 45%;
           margin: 0 0 0 10%;
         }
@@ -562,7 +569,19 @@ section.education {
       }
     }
     h2 {
-      font-size: 22px;
+      font-size: 28px;
+      width: 100%;
+      position: relative;
+      &:after {
+      	content:'';
+      	width: 5%;
+      	position: absolute;
+      	border-bottom: 3px solid #fff;
+      	bottom: -5px;
+      	left: 0;
+      	display: block;
+      	height: 5px;
+      }
       @media screen and (min-width: $tabwidth) {
         font-size: 18px;
       }

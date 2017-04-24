@@ -38,7 +38,8 @@ function acstarter_setup() {
   register_nav_menus( array(
     'primary' => esc_html__( 'Primary', 'acstarter' ),
     'sitemap' => esc_html__( 'Sitemap', 'acstarter' ),
-  ) );
+    'footer' => esc_html__( 'Footer', 'acstarter' ),
+  ));
 
   /*
    * Switch default core markup for search form, comment form, and comments

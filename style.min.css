@@ -553,7 +553,7 @@ to{visibility:hidden;-webkit-transform:translate3d(0,-100%,0);transform:translat
  *  Font Awesome 4.5.0 by @davegandy - http://fontawesome.io - @fontawesome
  *  License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
  */@font-face{font-family:'FontAwesome';src:url("./fonts/font-awesome/fontawesome-webfont.eot?v=4.5.0");src:url("./fonts/font-awesome/fontawesome-webfont.eot?v=4.5.0#iefix") format("embedded-opentype"),url("./fonts/font-awesome/fontawesome-webfont.woff2?v=4.5.0") format("woff2"),url("./fonts/font-awesome/fontawesome-webfont.woff?v=4.5.0") format("woff"),url("./fonts/font-awesome/fontawesome-webfont.ttf?v=4.5.0") format("truetype"),url("./fonts/font-awesome/fontawesome-webfont.svg?v=4.5.0#fontawesomeregular") format("svg");font-weight:normal;font-style:normal}
-.fa{display:inline-block;font:normal normal normal 14px/1 FontAwesome;font-size:inherit;text-rendering:auto;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+.fa{display:inline-block;font:normal normal normal 14px / 1 FontAwesome;font-size:inherit;text-rendering:auto;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
 .fa-lg{font-size:1.33333em;line-height:.75em;vertical-align:-15%}
 .fa-2x{font-size:2em}
 .fa-3x{font-size:3em}
@@ -1467,8 +1467,20 @@ section.mission{color:#fff}
 #home-intro .bcg{height:150px;padding:0}
 .section{width:100%;float:left;padding:5%;text-align:center}
 .purple{background-color:#573276;color:#fff}
+.site-info{width:100%;float:left;margin:5px auto;font-size:10px}
 .site-footer{width:100%;float:left;clear:both}
-.button-home a{width:auto;display:inline-block;padding:10px 15px;margin:0 0 10px 0;background-color:white;color:#573276;text-decoration:none;border:1px solid #573276;-webkit-transition:all ease .3s;transition:all ease .3s}
+.site-footer .footer-flex{width:100%;float:left;clear:both}
+@media screen and (min-width:600px){.site-footer .footer-flex{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:justify;-webkit-justify-content:space-between;-ms-flex-pack:justify;justify-content:space-between}
+}.site-footer .footer-left{width:100%;text-align:center}
+@media screen and (min-width:600px){.site-footer .footer-left{width:28%;text-align:left}
+}.site-footer .footer-left ul{margin:0;padding:0;list-style:none}
+.site-footer .footer-left li{font-size:16pt}
+.site-footer .footer-left a{color:#fff;text-decoration:none}
+.site-footer .footer-mid{width:100%;text-align:center}
+@media screen and (min-width:600px){.site-footer .footer-mid{width:28%}
+}.site-footer .footer-right{width:100%;text-align:center}
+@media screen and (min-width:600px){.site-footer .footer-right{width:28%;text-align:left}
+}.button-home a{width:auto;display:inline-block;padding:10px 15px;margin:0 0 10px 0;background-color:white;color:#573276;text-decoration:none;border:1px solid #573276;-webkit-transition:all ease .3s;transition:all ease .3s}
 .button-home a:hover{background-color:#573276;color:#fff}
 .button a{width:100%;display:inline-block;padding:10px 15px;margin:0 0 10px 0;background-color:white;color:#573276;text-decoration:none;border:1px solid #573276;-webkit-transition:all ease .3s;transition:all ease .3s}
 .button a:hover{background-color:#573276;color:#fff}
@@ -1498,6 +1510,13 @@ section.subnav{width:100%;color:#fff;float:left;text-align:center}
 section.subnav li{width:auto;display:inline-block}
 section.subnav a{width:auto;display:block;padding:10px 25px 10px 25px;text-decoration:none;background-color:rgba(87,50,118,0.8);-webkit-transition:all ease .3s;transition:all ease .3s;color:#fff}
 section.subnav a:hover{background-color:#573276}
+#websignupform{width:100%;position:relative;float:left;z-index:6;padding:10px;color:#333;background-image:url(images/mail-icon.png);background-repeat:no-repeat;background-position:0 10px}
+input#newsletters{width:60%;text-align:left;color:#573276;border-radius:0;line-height:2;background-color:rgba(255,255,255,0.2);border-color:rgba(255,255,255,0.2)}
+input#go{background-color:#fff;color:#573276;width:35%;float:right;border-radius:0;line-height:2}
+.link,.link a,#SignUp .signupframe{color:#269;font-family:Arial,Helvetica,sans-serif;font-size:13px}
+.link,.link a{text-decoration:none}
+#SignUp .signupframe{border:1px solid #000;background:#fff}
+#SignUp .signupframe .required{font-size:10px}
 .sticky{display:block}
 .hentry{margin:0 0 1.5em}
 .byline,.updated:not(.published){display:none}
@@ -1591,20 +1610,22 @@ section.education .edu-link img{width:100%}
 }section.education .edu-link:hover{-webkit-transform:scale(1.05);-ms-transform:scale(1.05);transform:scale(1.05)}
 section.education .edu-link a{display:block}
 .learnmore{width:100%;text-align:right}
-.learnmore a{width:auto;display:inline-block;padding:15px 20px;background-color:rgba(87,50,118,0.8);border:1px solid white;border-radius:5px;-webkit-transition:all ease .3s;transition:all ease .3s;color:#fff;text-decoration:none}
+.learnmore a{width:auto;display:inline-block;padding:10px 20px;background-color:rgba(255,255,255,0);border:1px solid white;-webkit-transition:all ease .3s;transition:all ease .3s;color:#fff;text-decoration:none;font-size:20pt;line-height:28pt;font-weight:300}
 .learnmore a:hover{background-color:#573276}
+.learnmore i{font-size:28pt;line-height:28pt;opacity:.3}
 .template-clinical-trials section.intro{width:100%;margin:0 0 30px 0;color:#fff;padding:20px;background-color:rgba(255,255,255,0.2)}
 @media screen and (min-width:600px){.template-clinical-trials section.intro{padding:3% 2%}
 }.template-clinical-trials section.intro>.single-board>.left{margin:0 0 20px 0}
 @media screen and (min-width:600px){.template-clinical-trials section.intro>.single-board>.left{float:left;width:45%;margin:0}
 }.template-clinical-trials section.intro>.single-board>.left>.left{margin:0 0 20px 0}
-@media screen and (min-width:600px){.template-clinical-trials section.intro>.single-board>.left>.left{width:40%;float:left;margin:0}
-}@media screen and (min-width:600px){.template-clinical-trials section.intro>.single-board>.left>.right{width:60%;float:left}
+@media screen and (min-width:600px){.template-clinical-trials section.intro>.single-board>.left>.left{width:35%;float:left;margin:0}
+}@media screen and (min-width:600px){.template-clinical-trials section.intro>.single-board>.left>.right{width:60%;float:right}
 }.template-clinical-trials section.intro>.single-board>.right{margin:0}
-@media screen and (min-width:600px){.template-clinical-trials section.intro>.single-board>.right{float:left;width:45%;margin:0 0 0 10%}
+@media screen and (min-width:600px){.template-clinical-trials section.intro>.single-board>.right{float:right;width:45%;margin:0 0 0 10%}
 }.template-clinical-trials section.trials .trial{width:100%;margin:0 0 30px 0;color:#fff;padding:20px;background-color:rgba(255,255,255,0.2)}
 @media screen and (min-width:600px){.template-clinical-trials section.trials .trial{padding:3% 2%}
-}.template-clinical-trials section.trials h2{font-size:22px}
+}.template-clinical-trials section.trials h2{font-size:28px;width:100%;position:relative}
+.template-clinical-trials section.trials h2:after{content:'';width:5%;position:absolute;border-bottom:3px solid #fff;bottom:-5px;left:0;display:block;height:5px}
 @media screen and (min-width:600px){.template-clinical-trials section.trials h2{font-size:18px}
 }@media screen and (min-width:1200px){.template-clinical-trials section.trials h2{font-size:22px}
 }section.events .event{width:100%;padding:2%;color:#fff}

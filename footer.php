@@ -40,124 +40,82 @@ wp_reset_postdata();
 		<div class="wrapper">
 
 
-		<section class="home-bottom">
-			<div class="thirds">
-				<h2>Corporate Members</h2>
-				<div class="content">
-					<a href="<?php bloginfo('url'); ?>/meetings/exhibitors/">
-						<img src="<?php echo $corpthumb; ?>" alt="<?php echo $alt; ?>" />
-					</a>
-				</div>
-				<h2>Partner Organizations</h2>
-				<div class="content">
-				<?php $the_query = new WP_Query();
-						$the_query->query(array(
-						'post_type'=>'partner',
-						'posts_per_page' => -1
-						));
-						if ( $the_query->have_posts() ) :
-					?>
-					<div class="flexslider">
-				        <ul class="slides">
-				        <?php 
+		<div class="footer-flex">
+			<section class="footer-left">
+				<?php wp_nav_menu( array( 'theme_location' => 'footer' ) ); ?>
+			</section>
 
-				        	while ( $the_query->have_posts() ) : ?>
-							<?php $the_query->the_post(); 
-								
-								$image = get_field('partner_logo');
-								$link = get_field('link');
+			<section class="footer-mid">
+				<h3>Subscribe to our Newsletter</h3>
+				<?php get_template_part('inc/newsletter'); ?>
+			</section>
 
-								if( !empty($image) ): 
+			<section class="footer-right">
+				<h3>Join a Local Chapter</h3>
+				<h3>Next Event</h3>
+				<?php
+					/*
 
-									// vars
-									$url = $image['url'];
-									$title = $image['title'];
-									$alt = $image['alt'];
+							Current / Upcoming Events
 
-									// thumbnail
-									$size = 'large';
-									$thumb = $image['sizes'][ $size ];
-									$width = $image['sizes'][ $size . '-width' ];
-									$height = $image['sizes'][ $size . '-height' ];
-								endif;
-		?>
-				            
-				            <li> 
-				            <?php if( !empty($link)) {echo '<a target="_blank" href="'. $link . '">';} ?>
-				              <img src="<?php echo $thumb; ?>" alt="<?php echo $alt; ?>" width="<?php echo $width; ?>" height="<?php echo $height; ?>" />
-				              <?php if( !empty($link)) { echo '</a>'; } ?>
-				            </li>
-				            
-				           <?php endwhile; ?>
-				      	 </ul><!-- slides -->
-					</div><!-- .flexslider -->
+
+					*/
+					$i=0;
+					$wp_query = new WP_Query();
+					$wp_query->query(array(
+						'post_type'=>'event',
+						'posts_per_page' => 1,
+						'paged' => $paged,
+						'meta_key'	=> 'date',
+						'orderby'	=> 'meta_value_num',
+						'order'		=> 'DESC'
+					));
+					if ($wp_query->have_posts()) : ?>
+					<section class="events">
+				    <?php while ($wp_query->have_posts()) : ?>
+				        
+				    <?php $wp_query->the_post(); 
+				    $date = get_field('date', false, false);
+					// make date object
+					$date = new DateTime($date);
+
+					$compareDate = $date->format('Ymd');
+					// echo '<pre>';
+					// print_r($compareDate);
+					// echo '</pre>';
+
+					$end_date = get_field('end_date', false, false);
+					// make date object
+					$end_date = new DateTime($end_date);
+
+					$today = date('Ymd');
+					//echo $today . ' | ' . $end_date;
+
+					// Only upcoming Dates
+					if ( $compareDate >= $today ) :
+				    ?>
+					<h2>National Conference <?php 
+								if( $end_date != '' ) {
+									echo $date->format('M j') . ' - ' . $end_date->format('j, Y') ; 
+								} else {
+									echo $date->format('j M Y');
+								}
+								?></h2>
 					<?php endif; ?>
-				</div>
-			</div><!-- thirds -->
-
-			<div class="thirds">
-				<h2>Physicians</h2>
-				<?php $the_query = new WP_Query();
-						$the_query->query(array(
-						'post_type'=>'board',
-						'posts_per_page' => -1
-						));
-						if ( $the_query->have_posts() ) :
-					?>
-					<div class="flexslider">
-				        <ul class="slides">
-				        <?php 
-
-				        	while ( $the_query->have_posts() ) : ?>
-							<?php $the_query->the_post(); 
-								
-								$photo = get_field('photo');
-								$size = 'thumbnail';
-								$person = get_the_title();
-								$santi = sanitize_title_with_dashes($person);
-
-							?>
-							<li> 
-				            <a href="<?php echo get_bloginfo('url'); ?>/board-members/#<?php echo $santi; ?>">
-				              <?php echo wp_get_attachment_image( $photo, $size ); ?>
-				              </a>
-				            </li>
-				            
-				           <?php endwhile; ?>
-				      	 </ul><!-- slides -->
-					</div><!-- .flexslider -->
+					<?php endwhile; ?>
 					<?php endif; ?>
-			</div><!-- thirds -->
-
-			<div class="thirds">
-				<h2>Member Benefits</h2>
-				<?php wp_reset_postdata();
-				// pull homepage
-					$post = get_post(439); 
-					setup_postdata( $post ); ?>
-						<?php if(have_rows('member_benefits')) : while(have_rows('member_benefits')) : the_row(); 
-						$benefit = get_sub_field('benefit');
-						$santi = sanitize_title_with_dashes($benefit);
-
-						?>
-						<div class="benefit">
-							<a href="<?php echo get_bloginfo('url'); ?>/member-benefits/#<?php echo $santi; ?>">
-								<?php echo $benefit; ?>
-							</a>
-						</div>
-
-						<?php endwhile; endif; ?>
-					 
-					<?php wp_reset_postdata(); ?>
-			</div><!-- thirds -->
-
-		</section>	
-
+			</section>
+		</div>
+		
 
 
 			<div class="site-info">
-				&copy; <?php echo date('Y') . ' ' . get_bloginfo('description'); ?> | New York, NY 
+				<?php echo get_bloginfo('description'); ?> | New York, NY 
 			</div><!-- .site-info -->
+			<div class="site-info">
+				&copy; <?php echo date('Y') . ' ' . get_bloginfo('description'); ?>
+			</div><!-- .site-info -->
+
 	</div><!-- wrapper -->
 	</footer><!-- #colophon -->
 </div><!-- #page -->

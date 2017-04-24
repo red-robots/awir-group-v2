@@ -63,7 +63,11 @@ get_header();
                                 <div class="trial">
                                     <h2><?php echo $trial_name; ?></h2>
                                     <div class="desc"><?php echo $description; ?></div>
-                                    <div class="learnmore"><a href="<?php echo $link; ?>">Learn More</a></div>
+                                    <div class="learnmore">
+                                        <a href="<?php echo $link; ?>">
+                                            Learn More <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+                                        </a>
+                                    </div>
                                 </div>
 
 							<?php endwhile; ?>

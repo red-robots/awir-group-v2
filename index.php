@@ -159,7 +159,22 @@ wp_reset_postdata();
 
 		
 
-			
+		<section class="values">
+		<?php 
+		if(have_rows('values', 'option')) : while(have_rows('values', 'option')) : the_row();
+		$value = get_sub_row('value','option');
+		$image = get_sub_row('image','option');
+		 ?>
+			<div class="icon-cont">
+				<a href="">
+					<div class="icon">
+						<img src="<?php echo get_stylesheet_directory_uri(); ?>/images/icon-map.png">
+					</div>
+					<div class="value"></div>
+				</a>
+			</div>
+		<?php endwhile; endif; ?>
+		</section>
 		
 
 
