@@ -1628,8 +1628,8 @@ section.advocacy .name{font-size:14px}
 @media screen and (min-width:600px){.template-clinical-trials section.trials h2,.template-advocacy section.trials h2{font-size:25px}
 }@media screen and (min-width:1200px){.template-clinical-trials section.trials h2,.template-advocacy section.trials h2{font-size:30px}
 }.template-clinical-trials section.trials .entry-content,.template-advocacy section.trials .entry-content{margin-bottom:10px}
-.template-clinical-trials .wrapper-adv-resources,.template-advocacy .wrapper-adv-resources{padding:0 20px}
-@media screen and (min-width:600px){.template-clinical-trials .wrapper-adv-resources,.template-advocacy .wrapper-adv-resources{margin:0 1%;width:98%;padding:0}
+.template-clinical-trials .wrapper-adv-resources,.template-advocacy .wrapper-adv-resources{padding:0 20px 30px 20px}
+@media screen and (min-width:600px){.template-clinical-trials .wrapper-adv-resources,.template-advocacy .wrapper-adv-resources{margin:0 1% 3% 1%;width:98%;padding:0}
 }.template-clinical-trials .wrapper-adv-resources section.adv-resources,.template-advocacy .wrapper-adv-resources section.adv-resources{width:100%;margin:0 auto}
 .template-clinical-trials .wrapper-adv-resources section.adv-resources .edu-link,.template-advocacy .wrapper-adv-resources section.adv-resources .edu-link{width:100%;margin:20px 0 0 0;background-color:rgba(255,255,255,0.2)}
 .template-clinical-trials .wrapper-adv-resources section.adv-resources .edu-link:first-child,.template-advocacy .wrapper-adv-resources section.adv-resources .edu-link:first-child{margin:0}
