@@ -19,7 +19,7 @@ if( get_post_type() == 'event') {
 
 
 // Bread crumbs
-echo do_shortcode('[breadcrumb]');
+//echo do_shortcode('[breadcrumb]');
  ?>
 
 
