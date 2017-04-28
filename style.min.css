@@ -553,7 +553,7 @@ to{visibility:hidden;-webkit-transform:translate3d(0,-100%,0);transform:translat
  *  Font Awesome 4.5.0 by @davegandy - http://fontawesome.io - @fontawesome
  *  License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
  */@font-face{font-family:'FontAwesome';src:url("./fonts/font-awesome/fontawesome-webfont.eot?v=4.5.0");src:url("./fonts/font-awesome/fontawesome-webfont.eot?v=4.5.0#iefix") format("embedded-opentype"),url("./fonts/font-awesome/fontawesome-webfont.woff2?v=4.5.0") format("woff2"),url("./fonts/font-awesome/fontawesome-webfont.woff?v=4.5.0") format("woff"),url("./fonts/font-awesome/fontawesome-webfont.ttf?v=4.5.0") format("truetype"),url("./fonts/font-awesome/fontawesome-webfont.svg?v=4.5.0#fontawesomeregular") format("svg");font-weight:normal;font-style:normal}
-.fa{display:inline-block;font:normal normal normal 14px/1 FontAwesome;font-size:inherit;text-rendering:auto;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+.fa{display:inline-block;font:normal normal normal 14px / 1 FontAwesome;font-size:inherit;text-rendering:auto;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
 .fa-lg{font-size:1.33333em;line-height:.75em;vertical-align:-15%}
 .fa-2x{font-size:2em}
 .fa-3x{font-size:3em}
@@ -1291,7 +1291,7 @@ a:hover,a:active{outline:0}
 }.main-navigation ul ul li:hover>ul,.main-navigation ul ul li.focus>ul{left:100%}
 .main-navigation ul ul a{width:100%;padding:5px 10px;-webkit-transition:all ease .3s;transition:all ease .3s;background-color:#573276;color:#fff}
 @media screen and (min-width:600px){.main-navigation ul ul a{width:200px}
-}.main-navigation ul ul :hover>a,.main-navigation ul ul .focus>a{background-color:rgba(87,50,118,0.8)}
+}.main-navigation ul ul :hover>a,.main-navigation ul ul .focus>a,.main-navigation ul ul a.active{background-color:rgba(87,50,118,0.8)}
 .main-navigation ul li:hover>ul,.main-navigation ul li.focus>ul{left:auto}
 .main-navigation li{float:left;position:relative;text-transform:uppercase;line-height:4;width:100%;font-size:14px;text-align:center}
 @media screen and (min-width:600px){.main-navigation li{width:auto}
@@ -1409,10 +1409,12 @@ html[xmlns] .flexslider .slides{display:block}
 div{-ms-hyphens:none;-moz-hyphens:none;-webkit-hyphens:none;hyphens:none}
 html{min-height:100%;background:black;background:-webkit-linear-gradient(-45deg,black 0,#803f99 100%);background:-webkit-linear-gradient(315deg,black 0,#803f99 100%);background:linear-gradient(135deg,black 0,#803f99 100%);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#000000',endColorstr='#803f99',GradientType=1)}
 .clear{clear:both}
-#content{width:100%;float:left}
+#content{width:100%;float:left;position:relative}
 #page{width:100%;margin:0 auto}
+.gform_wrapper .gform_footer input[type=submit]{width:100% !important;background-color:rgba(255,255,255,0);color:#fff;border:1px solid white;box-shadow:none;font-weight:300;text-shadow:none;padding:20px 0}
+.gform_wrapper .gform_footer input[type=submit]:hover{background-color:white;color:#573276}
 .wrapper{width:100%;margin:0 auto;padding:0 20px;position:relative}
-@media screen and (min-width:600px){.wrapper{width:96%;padding:0;margin:0 2%}
+@media screen and (min-width:600px){.wrapper{width:94%;padding:0;margin:0 3%}
 }header#masthead{background-color:#fff;width:100%;float:left}
 .top-banner{width:100%;float:left;margin:0}
 .top-banner a{display:block;line-height:0}
@@ -1428,7 +1430,7 @@ html{min-height:100%;background:black;background:-webkit-linear-gradient(-45deg,
 .widget-area h3{color:#fff}
 .widget-wrap{padding:20px}
 .transparent-black{background-color:rgba(0,0,0,0.5);padding:1%}
-.content-block{background-color:#000;color:#fff;margin-bottom:30px}
+.content-block{color:#fff;margin-bottom:30px}
 article.article{padding:2%;width:100%;float:left}
 article.page{color:#fff}
 .head-flex{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:justify;-webkit-justify-content:space-between;-ms-flex-pack:justify;justify-content:space-between}
@@ -1443,7 +1445,8 @@ article.page{color:#fff}
 }.skrollable-between .logo,.skrollable-between .logo a,.skrollable-after .logo,.skrollable-after .logo a{-webkit-transition:all ease .3s;transition:all ease .3s}
 .skr-slide{width:100%;float:left}
 section.mission{color:#fff}
-.bcg,.bcg-page,.bcg-page-secondary{background-position:top center;background-repeat:no-repeat;background-attachment:fixed;background-size:cover;height:100%;width:100%;position:relative}
+.white-wrapper-full{background-color:rgba(255,255,255,0.2);width:100%;padding:5%}
+.bcg,.bcg-page,.bcg-page-secondary{background-position:top center;background-repeat:no-repeat;background-attachment:fixed;background-size:contain;height:100%;width:100%;position:relative}
 .header-top{width:auto;display:inline-block;top:0;right:0;position:absolute}
 .header-top .buttons{width:auto;display:inline-block;float:left}
 .header-top .button{width:auto;display:inline-block}
@@ -1471,16 +1474,21 @@ section.mission{color:#fff}
 .site-footer{width:100%;float:left;clear:both}
 .site-footer .footer-flex{width:100%;float:left;clear:both}
 @media screen and (min-width:600px){.site-footer .footer-flex{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:justify;-webkit-justify-content:space-between;-ms-flex-pack:justify;justify-content:space-between}
-}.site-footer .footer-left{width:100%;text-align:center}
+}.site-footer h3{font-size:20px;font-weight:300}
+.site-footer .register-link{width:auto;display:inline-block}
+.site-footer .register-link a{display:block;color:#fff;padding:10px 15px;border-radius:5px;text-decoration:none;background-color:#573276}
+.site-footer .register-link a:hover{background-color:#fff;color:#573276}
+.site-footer .footer-left{width:100%;text-align:center}
 @media screen and (min-width:600px){.site-footer .footer-left{width:28%;text-align:left}
 }.site-footer .footer-left ul{margin:0;padding:0;list-style:none}
-.site-footer .footer-left li{font-size:16pt}
+.site-footer .footer-left li{font-size:16pt;font-weight:300}
 .site-footer .footer-left a{color:#fff;text-decoration:none}
 .site-footer .footer-mid{width:100%;text-align:center}
 @media screen and (min-width:600px){.site-footer .footer-mid{width:28%}
 }.site-footer .footer-right{width:100%;text-align:center}
 @media screen and (min-width:600px){.site-footer .footer-right{width:28%;text-align:left}
-}.button-home a{width:auto;display:inline-block;padding:10px 15px;margin:0 0 10px 0;background-color:white;color:#573276;text-decoration:none;border:1px solid #573276;-webkit-transition:all ease .3s;transition:all ease .3s}
+}.site-footer .footer-right h2{font-size:18px;font-weight:300}
+.button-home a{width:auto;display:inline-block;padding:10px 15px;margin:0 0 10px 0;background-color:white;color:#573276;text-decoration:none;border:1px solid #573276;-webkit-transition:all ease .3s;transition:all ease .3s}
 .button-home a:hover{background-color:#573276;color:#fff}
 .button a{width:100%;display:inline-block;padding:10px 15px;margin:0 0 10px 0;background-color:white;color:#573276;text-decoration:none;border:1px solid #573276;-webkit-transition:all ease .3s;transition:all ease .3s}
 .button a:hover{background-color:#573276;color:#fff}
@@ -1526,12 +1534,31 @@ input#go{background-color:#fff;color:#573276;width:35%;float:right;border-radius
 .entry-content p{font-size:16px}
 @media screen and (min-width:600px){.entry-content p{font-size:18px}
 }.page-links{clear:both;margin:0 0 1.5em}
-section.home-banner{width:100%;height:70vh;background-size:contain;position:relative;background-attachment:fixed;background-repeat:no-repeat;background-position:center;top:0;left:0;overflow-x:hidden}
-section.home-hero{width:100%;float:left}
-@media screen and (min-width:600px){section.home-hero{width:60%;float:left}
-}section.video{width:100%;float:left}
-@media screen and (min-width:600px){section.video{width:30%;float:right}
+section.home-banner{width:100%;height:70vh;background-size:contain;position:absolute;background-attachment:fixed;background-repeat:no-repeat;background-position:center;top:0;left:0;overflow-x:hidden}
+section.home-hero{width:100%;height:50%;float:left;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;-webkit-align-content:center;-ms-flex-line-pack:center;align-content:center;-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center}
+@media screen and (min-width:600px){section.home-hero{width:40%;margin:5% 0 0 3%}
+}section.home-hero h2{font-size:40px;line-height:1;color:#573276}
+section.video{width:100%;float:left;text-align:center;background-color:black;color:white;padding:40px 0}
+section.video h2{font-size:40px}
+section.video .vid-cont{width:80%;margin:0 auto}
+@media screen and (min-width:600px){section.video .vid-cont{width:50%}
+}@media screen and (min-width:1200px){section.video .vid-cont{width:40%}
 }section.video video{max-width:100%}
+section.values{width:100%;float:left;text-align:center;padding:50px 0;background-color:#fff}
+section.values h2{font-size:50px;font-weight:400;color:#573276}
+section.values .value{font-size:30px;font-weight:400;color:#573276}
+section.values .icon-cont{-webkit-flex-basis:50%;-ms-flex-preferred-size:50%;flex-basis:50%;margin-bottom:30px}
+@media screen and (min-width:600px){section.values .icon-cont{-webkit-flex-basis:30%;-ms-flex-preferred-size:30%;flex-basis:30%}
+}section.values .icon-cont .icon{width:50%;margin:0 auto}
+@media screen and (min-width:1200px){section.values .icon-cont .icon{width:30%}
+}section.values .icon-cont .icon img{width:100%}
+section.values .the-values{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-justify-content:space-around;-ms-flex-pack:distribute;justify-content:space-around;-webkit-flex-wrap:wrap;-ms-flex-wrap:wrap;flex-wrap:wrap}
+section.mission .left{width:90%;margin:0 auto;background-color:#573276;color:#fff;padding:5%;line-height:1.5;font-weight:300;font-size:18px}
+@media screen and (min-width:600px){section.mission .left{width:55%;margin:0;float:left}
+}section.mission .left h2{font-size:40px;font-weight:400}
+section.mission .m-image{width:90%;margin:0 auto;line-height:0}
+@media screen and (min-width:600px){section.mission .m-image{width:45%;float:right}
+}section.mission .m-image img{width:100%}
 .local-chapters{width:100%;float:left}
 @media screen and (min-width:600px){.local-chapters{width:40%;float:left}
 }.local-chapters .title{width:100%;text-align:center;background-color:#573276;color:#fff;font-size:26px;padding:10px 0}
@@ -1554,7 +1581,7 @@ section.home-hero{width:100%;float:left}
 .benefit a:hover{background-color:#573276}
 .benefit-page{width:100%;float:left;margin:0 0 20px 0;border-bottom:1px solid rgba(255,255,255,0.4);overflow:hidden}
 .benefit-page h3{font-size:24px}
-.boardmember{width:100%;float:left;border:2px solid #eee;position:relative;text-align:center;background-color:#000}
+.boardmember{width:100%;float:left;position:relative;text-align:center}
 .boardmember.first{margin:0 0 30px 0}
 .boardmember.last{margin:0 0 30px 0}
 .boardmember a.open{width:100%;height:100%;position:absolute;top:0;left:0;display:block;color:#fff;text-decoration:none;text-indent:-9000px}
@@ -1629,7 +1656,7 @@ section.advocacy .name{font-size:14px}
 }@media screen and (min-width:1200px){.template-clinical-trials section.trials h2,.template-advocacy section.trials h2{font-size:30px}
 }.template-clinical-trials section.trials .entry-content,.template-advocacy section.trials .entry-content{margin-bottom:10px;margin-top:2.4em}
 .template-clinical-trials .wrapper-adv-resources,.template-advocacy .wrapper-adv-resources{padding:0 20px 30px 20px}
-@media screen and (min-width:600px){.template-clinical-trials .wrapper-adv-resources,.template-advocacy .wrapper-adv-resources{margin:0 1% 3% 1%;width:98%;padding:0}
+@media screen and (min-width:600px){.template-clinical-trials .wrapper-adv-resources,.template-advocacy .wrapper-adv-resources{margin:0 2% 3% 2%;width:96%;padding:0}
 }.template-clinical-trials .wrapper-adv-resources section.adv-resources,.template-advocacy .wrapper-adv-resources section.adv-resources{width:100%;margin:0 auto}
 .template-clinical-trials .wrapper-adv-resources section.adv-resources .edu-link,.template-advocacy .wrapper-adv-resources section.adv-resources .edu-link{width:100%;margin:20px 0 0 0;background-color:rgba(255,255,255,0.2)}
 .template-clinical-trials .wrapper-adv-resources section.adv-resources .edu-link:first-child,.template-advocacy .wrapper-adv-resources section.adv-resources .edu-link:first-child{margin:0}

@@ -43,38 +43,145 @@ section.home-banner {
   width: 100%;
   height: 70vh;
   background-size: contain;
-  position: relative;
+  position: absolute;
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-position: center;
   top: 0px;
   left: 0;
   overflow-x: hidden;
+
 }
 
 section.home-hero {
   width: 100%;
+  height: 50%;
   float: left;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
 
   @media screen and (min-width: $tabwidth) {
-    width: 60%;
-    float: left;
+    width: 40%;
+    // float: left;
+    margin: 5% 0 0 3%;
+  }
+  h2 {
+    font-size: 40px;
+    line-height: 1;
+    color: $color-purple;
   }
 }
 
 section.video {
   width: 100%;
   float: left;
+  text-align: center;
+  background-color: rgba(#000,1);
+  color: rgba(#fff,1);
+  padding: 40px 0;
 
   @media screen and (min-width: $tabwidth) {
-    width: 30%;
-    float: right;
+   
+  }
+  h2 {
+    font-size: 40px;
+  }
+  .vid-cont {
+    width: 80%;
+    margin: 0 auto;
+    @media screen and (min-width: $tabwidth) {
+      width: 50%;
+    }
+    @media screen and (min-width: $deskwidth) {
+      width: 40%;
+    }
   }
   video {
+    
+    
     max-width: 100%;
   }
 }
+section.values {
+  width: 100%;
+  float: left;
+  text-align: center;
+  padding: 50px 0;
+  background-color: #fff;
+  
+  h2 {
+    font-size: 50px;
+    font-weight: 400;
+    color: $color-purple;
+  }
+  .value {
+    font-size: 30px;
+    font-weight: 400;
+    color: $color-purple;
+   
+  }
+  .icon-cont {
+    flex-basis: 50%;
+    margin-bottom: 30px;
+    @media screen and (min-width: $tabwidth) {
+      flex-basis: 30%;
+    }
+    .icon {
+      width: 50%;
+      margin: 0 auto;
+      @media screen and (min-width: $tabwidth) {
 
+      }
+      @media screen and (min-width: $deskwidth) {
+         width: 30%;
+      }
+      img {
+        width: 100%;
+      }
+    }
+  }
+  .the-values {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+}
+section.mission {
+  .left {
+    width: 90%;
+    margin: 0px auto;
+    background-color: $color-purple;
+    color: #fff;
+    padding: 5%;
+    line-height: 1.5;
+    font-weight: 300;
+    font-size: 18px;
+    @media screen and (min-width: $tabwidth) {
+      width: 55%;
+      margin: 0;
+      float: left;
+    }
+    h2 {
+      font-size: 40px;
+       font-weight: 400;
+    }
+  }
+  .m-image {
+    width: 90%;
+    margin: 0 auto;
+    line-height: 0;
+    @media screen and (min-width: $tabwidth) {
+      width: 45%;
+      float: right;
+    }
+    img {
+      width: 100%;
+
+    }
+  }
+}
 .local-chapters {
   width: 100%;
   float: left;
@@ -199,10 +306,8 @@ section.video {
 .boardmember {
   width: 100%;
   float: left;
-  border: 2px solid #eee;
   position: relative;
   text-align: center;
-  background-color: #000;
 
   @media screen and (min-width: $tabwidth) {
     // width: 21%;
@@ -606,8 +711,8 @@ section.advocacy {
   .wrapper-adv-resources {
     padding: 0 20px 30px 20px;
     @media screen and (min-width: $tabwidth) {
-      margin: 0 1% 3% 1%;
-      width: 98%;
+      margin: 0 2% 3% 2%;
+      width: 96%;
       padding: 0;
     }
     section.adv-resources {

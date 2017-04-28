@@ -21,6 +21,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', end
 #content {
 	width: 100%;
 	float: left;
+	position: relative;
 	// background-color: #F5F5F5;
 	// min-height: 700px;
 	// margin-top: 10px;
@@ -31,6 +32,23 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', end
 }
 #primary {
 }
+.gform_wrapper {
+	.gform_footer input[type=submit] {
+		width: 100% !important;
+		background-color: rgba(#fff, 0);
+		color: #fff;
+		border: 1px solid rgba(#fff, 1);
+		box-shadow: none;
+		font-weight: 300;
+		text-shadow: none;
+		padding: 20px 0;
+		&:hover {
+			background-color: rgba(#fff, 1);
+			color: $color-purple;
+		}
+	}
+}
+
 .wrapper {
 	width: 100%;
 	margin: 0px auto;
@@ -38,9 +56,9 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', end
 	position: relative;
 
 	@media screen and (min-width: $tabwidth) {
-		width: 96%;
+		width: 94%;
 		padding: 0;
-		margin: 0 2%;
+		margin: 0 3%;
 	}
 }
 header#masthead {
@@ -111,7 +129,6 @@ header#masthead {
 	padding: 1%;
 }
 .content-block {
-	background-color: #000;
 	color: #fff;
 	margin-bottom: 30px;
 }
@@ -206,11 +223,16 @@ article.page {
 section.mission {
 	color: #fff;
 }
+.white-wrapper-full	{
+	background-color: rgba(#fff, .2);
+	width: 100%;
+	padding: 5%;
+}
 .bcg, .bcg-page, .bcg-page-secondary {
     background-position: top center;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    background-size: cover;
+    background-size: contain;
     height: 100%;
     width: 100%;
     position: relative;
@@ -346,6 +368,26 @@ section.mission {
 			justify-content: space-between;
 		}
 	}
+	h3 {
+		font-size: 20px;
+		font-weight: 300;
+	}
+	.register-link {
+		width: auto;
+		display: inline-block;
+		a {
+			display: block;
+			color: #fff;
+			padding: 10px 15px;
+			border-radius: 5px;
+			text-decoration: none;
+			background-color: $color-purple;
+			&:hover {
+				background-color: #fff;
+				color: $color-purple;
+			}
+		}
+	}
 	.footer-left {
 		width: 100%;
 		text-align: center;
@@ -360,7 +402,7 @@ section.mission {
 		}
 		li {
 			font-size: 16pt;
-
+			font-weight: 300;
 		}
 		a {
 			color: #fff;
@@ -381,6 +423,10 @@ section.mission {
 		@media screen and (min-width: $tabwidth) {
 			width: 28%;
 			text-align: left;
+		}
+		h2 {
+			font-size: 18px;
+			font-weight: 300;
 		}
 	}
 }

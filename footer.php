@@ -74,6 +74,7 @@ wp_reset_postdata();
 					<?php while ( $wp_query->have_posts() ) : ?>
 
 						<?php $wp_query->the_post();
+						$registration_link = get_field('registration_link');
 						$date = get_field( 'date', false, false );
 						// make date object
 						$date = new DateTime( $date );
@@ -100,6 +101,11 @@ wp_reset_postdata();
 									echo $date->format( 'j M Y' );
 								}
 								?></h2>
+								<?php if($registration_link != '') { ?>
+									<div class="register-link">
+										<a href="<?php echo $registration_link; ?>">Register Now</a>
+									</div>
+								<?php } ?>
 						<?php endif; ?>
 					<?php endwhile; ?>
 					<?php endif; ?>

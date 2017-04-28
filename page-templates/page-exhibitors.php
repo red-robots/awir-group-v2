@@ -23,7 +23,7 @@ get_header();
 
 			?>
 
-				<article id="post-<?php the_ID(); ?>" class="content-block article">
+				<article id="post-<?php the_ID(); ?>" class="content-block article white-wrapper-full">
 					<div class="entry-content">
 						<?php echo $description; ?>
 					</div><!-- .entry-content -->

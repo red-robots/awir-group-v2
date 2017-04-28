@@ -40,7 +40,7 @@ get_header();
 			<section class="events">
 		    <?php while ($wp_query->have_posts()) : $wp_query->the_post(); ?>
 
-				<article id="post-<?php the_ID(); ?>" class="content-block article">
+				<article id="post-<?php the_ID(); ?>" class="content-block article white-wrapper-full">
 
 				<h3><?php the_title(); ?></h3>
 				<div class="button"><a class="" href="<?php the_permalink(); ?>">Access Meeting Content</a></div>

@@ -10,7 +10,7 @@ get_header();
 
 
  ?>
-
+<div class="wrapper">
 	<div id="primary" class="content-area-full">
 		<main id="main" class="site-main" role="main">
 
@@ -43,7 +43,7 @@ get_header();
 
 			    ?>
 
-			    <div class="boardmember <?php echo $postClass; ?> js-blocks wow fadeInUp" id="<?php echo $santi; ?>">
+			    <div class="boardmember white-wrapper-full	<?php echo $postClass; ?> js-blocks wow fadeInUp" id="<?php echo $santi; ?>">
 			    	<div class="member-details">
 			    	<div class="member-photo">
 			    		<?php echo wp_get_attachment_image( $photo, $size ); ?>
@@ -65,6 +65,6 @@ get_header();
 
 		</main><!-- #main -->
 	</div><!-- #primary -->
-
+</div>
 <?php
 get_footer();
