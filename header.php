@@ -39,7 +39,7 @@
             <div class="header-top">
                 <div class="buttons">
                     <div class="button">
-                        <a href="<?php bloginfo( 'url' ); ?>/sign_up">Join!</a>
+                        <a href="<?php bloginfo( 'url' ); ?>/sign-up">Join!</a>
                     </div>
 
                     <div class="button">

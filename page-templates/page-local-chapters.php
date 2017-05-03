@@ -11,7 +11,7 @@ get_header();
 
 
 <div id="primary" class="content-area-full">
-		<main id="main" class="site-main" role="main">
+		<main id="main" class="site-main template-clinical-trials" role="main">
 
 			<?php
 			while ( have_posts() ) : the_post(); 
@@ -25,44 +25,37 @@ get_header();
 			$advocacy_link = get_field('advocacy_link');
 
 			?>
-<div class="wrapper">
-				<article id="post-<?php the_ID(); ?>" class="content-section-page "
-				
-				>
 
-					<section class="small-width">
-						<div class="entry-content">
+			<article id="post-<?php the_ID(); ?>" class="content-section-page">
+				<div class="wrapper">
+
+					<section class="intro">
 							<div class="single-board">
 								<div class="left">
-									<div class="member-photo">
-							    		<?php echo wp_get_attachment_image( $photo, $size ); ?>
-							    	</div>
-							    	<h2><?php echo $name; ?></h2>
-							    	<h3>AWIR - Chair of Advocacy</h3>
-								</div>
+									<div class="left">
+										<div class="member-photo">
+								    		<?php echo wp_get_attachment_image( $photo, $size ); ?>
+								    	</div><!--.member photo-->
+							    	</div><!--.left-->
+							    	<div class="right">
+							    		<h2><?php echo $name; ?></h2>
+							    		<h3>AWIR - Chair of Advocacy</h3>
+											<?php echo do_shortcode('[gravityform id="' . $form['id'] . '" title="false" description="false" ajax="true"]'); ?>
+									</div><!--.right-->
+									<div class="clear"></div>
+								</div><!--.left-->
 								<div class="right">
-									<?php echo do_shortcode('[gravityform id="' . $form['id'] . '" title="false" description="false" ajax="true"]'); ?>
-								</div>
+                                    <div class="entry-content">
+										<?php echo $description; ?>
+                                    </div><!-- .entry-content -->
+                                </div><!--.right-->
+                                <div class="clear"></div>
 							</div>
-						</div><!-- .entry-content -->
 					</section>
+					</div>
 				</article><!-- #post-## -->
-</div>
 
-
-
-			<section class="small-width">
-				<article id="post-<?php the_ID(); ?>"  class="content-section-page  center ">
-				<div class="wrapper">
-					<div class="entry-content">
-						<?php echo $description; ?>
-					</div><!-- .entry-content -->
-				</div>
-				</article><!-- #post-## -->
-				</section>
-
-		
-
+	<div class="wrapper">
 		<section class="adv-resources">
 			<h2>Local Chapter Events</h2>
 			<?php if( have_rows('events') ):  ?>
@@ -97,8 +90,10 @@ get_header();
 					</section>
 				<?php endif; ?>
 		</section>
-		
+	</div>
+	<!-- wrapper -->
 
+	<div class="wrapper">
 		<section class="adv-resources">
 			<h2>Local Chapter Leaders</h2>
 			<?php if( have_rows('leaders') ):  ?>
@@ -129,7 +124,8 @@ get_header();
 					</section>
 				<?php endif; ?>
 		</section>
-				
+	</div>
+	<!-- wrapper -->			
 				
 
 			<?php endwhile; // End of the loop.

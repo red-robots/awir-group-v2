@@ -8,8 +8,17 @@
 	@media screen and (min-width: $tabwidth) {
 		float: right;
 		text-align: left;
+		margin: 10px 0 0 0;
+		width: 100%;
+	}
+	@media screen and (min-width: $midwidth) {
+		float: right;
+		text-align: left;
 		margin: 70px 0 0 0;
 		width: 60%;
+	}
+	@media screen and (min-width: $deskwidth) {
+
 	}
 
 	ul {
@@ -67,6 +76,7 @@
 			.focus > a,
 			 a.active {
 				background-color: rgba($color-purple, 0.8);
+				color: #fff;
 			}
 
 			a:hover,

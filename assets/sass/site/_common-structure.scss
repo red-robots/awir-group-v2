@@ -22,6 +22,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', end
 	width: 100%;
 	float: left;
 	position: relative;
+	padding-bottom: 50px;
 	// background-color: #F5F5F5;
 	// min-height: 700px;
 	// margin-top: 10px;
@@ -107,6 +108,7 @@ header#masthead {
 	width: 100%;
 	margin: 0px auto;
 	padding-bottom: 40px;
+	background-color: rgba(#fff, .2);
 	
 	@media screen and (min-width: $tabwidth) {
 		width: 26%;
@@ -131,6 +133,9 @@ header#masthead {
 .content-block {
 	color: #fff;
 	margin-bottom: 30px;
+	h2.no-margin {
+		margin: 0 0 20px 0;
+	}
 }
 article.article {
 	padding: 2%;
@@ -142,8 +147,11 @@ article.page {
 
 }
 .head-flex {
-	display: flex;
-	justify-content: space-between;
+	
+	@media screen and (min-width: $midwidth) {
+		display: flex;
+		justify-content: space-between;
+	}
 }
 /* Logo */
 .logo , h1.logo {
@@ -227,6 +235,7 @@ section.mission {
 	background-color: rgba(#fff, .2);
 	width: 100%;
 	padding: 5%;
+	float: left;
 }
 .bcg, .bcg-page, .bcg-page-secondary {
     background-position: top center;
@@ -243,6 +252,7 @@ section.mission {
 	top: 0;
 	right: 0;
 	position: absolute;
+	z-index: 10000;
 	.buttons {
 		width: auto;
 		display: inline-block;

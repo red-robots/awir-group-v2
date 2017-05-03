@@ -20,7 +20,8 @@ get_header();
 			$description = get_field('description');
 
 			?>
-
+			<div class="wrapper-adv-resources">
+			<section class="adv-resources white-wrapper-full">
 				<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
 
@@ -31,14 +32,14 @@ get_header();
 				</article><!-- #post-## -->
 
 				<?php if( have_rows('links') ):  ?>
-					<section class="education">
+					<section id="container" class="education">
 					<?php while( have_rows('links') ):  the_row();
 							$link_image = get_sub_field('link_image');
 							$size = 'full';
 							$link = get_sub_field('link');
 					?>
 						
-							<div class="edu-link">
+							<div class="edu-link item">
 								<a href="<?php echo $link; ?>">
 									<?php echo wp_get_attachment_image( $link_image, $size ); ?>
 								</a>
@@ -50,7 +51,8 @@ get_header();
 
 			<?php endwhile; // End of the loop.
 			?>
-
+			</section>
+			</div>
 		</main><!-- #main -->
 	</div><!-- #primary -->
 

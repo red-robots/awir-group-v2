@@ -35,10 +35,11 @@
 	padding: 12px;
 	padding: 0.75rem;
 	@include transition(.3s ease all);
-	border: 2px solid rgba($color-purple, 1);
+	border: 1px solid rgba(#fff, 1);
 }
  
 .navigation li a:hover,
 .navigation li.active a {
-	background-color: rgba($color-purple, 1);
+	background-color: rgba(#fff, 1);
+	color: rgba($color-purple, 1);
 }

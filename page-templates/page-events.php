@@ -13,7 +13,7 @@ get_header();
 
 	<div id="primary" class="content-area-full">
 		<main id="main" class="site-main" role="main">
-
+		<section class="white-wrapper-full">
 			<?php
 			/*
 
@@ -128,15 +128,15 @@ get_header();
 						    </div>
 						<?php endif; ?>
 			</div><!-- event -->
-
+			</section>
 
 			<section class="event-sponsors">
 				<section class="sponsors">
 
-			<header class="page-title">
+			
 				<h2>Sponsors</h2>
 				<div class="thanks">Thank you for the support</div>
-			</header>
+			
 
 				<?php if(have_rows('platinum_sponsors')) : ?>
 					<div class="sponsor sponsor-event ">

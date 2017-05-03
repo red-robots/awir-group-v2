@@ -18,7 +18,7 @@ get_header();
 
 	<div id="primary" class="content-area-full">
 		<main id="main" class="site-main" role="main">
-
+		<section class="white-wrapper-full">
 			<?php
 			/*
 
@@ -54,7 +54,7 @@ get_header();
 
 			<?php endwhile; // End of the loop. ?>
 		<?php endif; ?>
-
+		</section>
 		</main><!-- #main -->
 	</div><!-- #primary -->
 
